@@ -8,7 +8,12 @@ Virtual PDF AirPrint printer
   ```bash
   # Assume you're in this project's root directory, where the Dockerfile is located
   docker build -t air-pdf-printer .
+
+  # Build with argument, set your own admin password instead of the default one
+  docker build --build-arg ADMIN_PASSWORD=<YourPassword> -t air-pdf-printer .
   ```
+
+  Default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23)
 
 * Play
 
