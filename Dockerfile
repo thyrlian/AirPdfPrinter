@@ -14,3 +14,7 @@ LABEL maintainer "thyrlian@gmail.com"
 # install CUPS packages
 RUN apt update -y && apt upgrade -y && \
     apt install task-print-server printer-driver-cups-pdf -y
+
+# listen on ports
+EXPOSE 631
+EXPOSE 49631
