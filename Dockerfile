@@ -26,3 +26,9 @@ RUN mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.bak && \
     usermod -aG lpadmin root && \
     echo "root:${ADMIN_PASSWORD}" | chpasswd
 ADD cupsd.conf /etc/cups/
+
+# setup PDF printer
+ADD config.sh /tmp/
+RUN chmod +x /tmp/config.sh
+
+CMD ["service cups start", "/tmp/config.sh"]
