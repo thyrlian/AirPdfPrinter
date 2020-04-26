@@ -15,9 +15,23 @@ Virtual PDF AirPrint printer
 
   Default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23)
 
-* Play
+* Run
 
   ```bash
   # Run a container with interactive shell
   docker run -it -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF --name air-pdf-printer air-pdf-printer /bin/bash
   ```
+
+* Manage
+
+  Web Interface: http://[*IpAddressOfYourContainer*]:631/
+
+* Add Printer
+
+  * **macOS**: `System Preferences` -> `Printers & Scanners` -> `Add (+)` -> `IP`
+
+    * **Address**: [*IpAddressOfYourContainer*]
+    * **Protocol**: `Internet Printing Protocol - IPP`
+    * **Queue**: `printers/PDF` (find the info here: http://[*IpAddressOfYourContainer*]:631/printers/)
+    * **Name**: [*YourCall*]
+    * **Use**: `Generic PostScript Printer`
