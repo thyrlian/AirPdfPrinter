@@ -32,6 +32,9 @@ Virtual PDF AirPrint printer
 * Commands
 
   ```bash
+  # Start CUPS service
+  service cups start
+
   # Shows the server hostname and port.
   lpstat -H
 
