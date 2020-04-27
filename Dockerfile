@@ -31,4 +31,5 @@ ADD cupsd.conf /etc/cups/
 ADD config.sh /tmp/
 RUN chmod +x /tmp/config.sh && /tmp/config.sh
 
-CMD ["service cups start"]
+# launch CUPS print server
+CMD service cups start && tail -f /dev/null
