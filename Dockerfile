@@ -29,6 +29,6 @@ ADD cupsd.conf /etc/cups/
 
 # setup PDF printer
 ADD config.sh /tmp/
-RUN chmod +x /tmp/config.sh
+RUN chmod +x /tmp/config.sh && /tmp/config.sh
 
-CMD ["service cups start", "/tmp/config.sh"]
+CMD ["service cups start"]
