@@ -18,8 +18,11 @@ Virtual PDF AirPrint printer
 * Run
 
   ```bash
-  # Run a container with interactive shell
+  # Run a container with interactive shell (you'll have to start CUPS print server on your own)
   docker run -it -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF --name air-pdf-printer air-pdf-printer /bin/bash
+
+  # Run a container in the background
+  docker run -d -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF --name air-pdf-printer air-pdf-printer
   ```
 
 * Manage
