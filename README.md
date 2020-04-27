@@ -25,6 +25,10 @@ Virtual PDF AirPrint printer
   docker run -d -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF --name air-pdf-printer air-pdf-printer
   ```
 
+* Troubleshoot
+
+  Logs directory: `/var/log/cups/`
+
 * Commands
 
   ```bash
