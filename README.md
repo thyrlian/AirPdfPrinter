@@ -25,6 +25,25 @@ Virtual PDF AirPrint printer
   docker run -d -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF --name air-pdf-printer air-pdf-printer
   ```
 
+* Commands
+
+  ```bash
+  # Shows the server hostname and port.
+  lpstat -H
+
+  # Shows whether the CUPS server is running.
+  lpstat -r
+
+  # Shows all status information.
+  lpstat -t
+
+  # Shows all available destinations on the local network.
+  lpstat -e
+
+  # Shows the current default destination.
+  lpstat -d
+  ```
+
 * Manage
 
   Web Interface: http://[*IpAddressOfYourContainer*]:631/
