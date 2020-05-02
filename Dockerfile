@@ -32,14 +32,7 @@ ADD config.sh /tmp/
 RUN chmod +x /tmp/config.sh && /tmp/config.sh
 
 # configure AirPrint
-RUN wget https://raw.githubusercontent.com/tjfontaine/airprint-generate/master/airprint-generate.py && \
-    chmod +x airprint-generate.py && \
-    apt install -y python python-cups && \
-    service cups start && \
-    ./airprint-generate.py -d /etc/avahi/services/ && \
-    service cups stop && \
-    apt remove -y python python-cups && apt autoremove -y && \
-    rm airprint-generate.py
+ADD AirPrint-PDF.service /etc/avahi/services/
 
 # launch CUPS print server
 CMD service cups start && tail -f /dev/null
