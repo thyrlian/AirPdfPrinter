@@ -31,5 +31,8 @@ ADD cupsd.conf /etc/cups/
 ADD config.sh /tmp/
 RUN chmod +x /tmp/config.sh && /tmp/config.sh
 
+# configure AirPrint
+ADD AirPrint-PDF.service /etc/avahi/services/
+
 # launch CUPS print server
 CMD service cups start && tail -f /dev/null
