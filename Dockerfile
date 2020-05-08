@@ -5,7 +5,7 @@
 
 # Base image
 # ---------------------------------------------------------------------- #
-FROM debian:buster
+FROM ubuntu:20.04
 
 # Author
 # ---------------------------------------------------------------------- #
@@ -17,7 +17,7 @@ EXPOSE 49631
 
 # install CUPS packages
 RUN apt update -y && apt upgrade -y && \
-    apt install -y task-print-server printer-driver-cups-pdf
+    apt install -y --no-install-recommends cups printer-driver-cups-pdf
 
 # configure the CUPS scheduler
 ARG ADMIN_PASSWORD=printer
