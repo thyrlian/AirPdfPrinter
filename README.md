@@ -25,6 +25,10 @@ Virtual PDF AirPrint printer
   docker run -d -p 631:631 -p 49631:49631 -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
   ```
 
+* Output
+
+  CUPS-PDF output directory are defined under **Path Settings** which is located at `/etc/cups/cups-pdf.conf`.  And the default path usually is: `/var/spool/cups-pdf/${USER}`
+
 * Troubleshoot
 
   Logs directory: `/var/log/cups/`
