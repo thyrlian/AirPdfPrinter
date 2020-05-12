@@ -40,7 +40,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     echo "image/urf urf (0,UNIRAST)" > /usr/share/cups/mime/apple.types && \
     echo "image/urf application/vnd.cups-postscript 66 pdftops" > /usr/share/cups/mime/local.convs && \
     echo "image/urf urf string(0,UNIRAST<00>)" > /usr/share/cups/mime/airprint.types && \
-    echo "image/urf application/pdf 100 pdftoraster" > /usr/share/cups/mime/airprint.convs
+    echo "image/urf application/pdf 100 pdftoraster" > /usr/share/cups/mime/airprint.convs
 
 # launch CUPS print server
 CMD service cups start && service dbus start && service avahi-daemon start && tail -f /dev/null
