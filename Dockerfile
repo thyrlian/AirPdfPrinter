@@ -14,6 +14,7 @@ LABEL maintainer "thyrlian@gmail.com"
 # listen on ports
 EXPOSE 631
 EXPOSE 49631
+EXPOSE 5353/UDP
 
 # install CUPS packages
 RUN apt update -y && apt upgrade -y && \
