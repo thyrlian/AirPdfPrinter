@@ -40,8 +40,17 @@ Virtual PDF AirPrint printer
 * Commands
 
   ```bash
+  # Run all init scripts, in alphabetical order, with the status command
+  service --status-all
+
   # Start CUPS service
   service cups start
+
+  # Start Avahi mDNS/DNS-SD daemon
+  service avahi-daemon start
+
+  # Start Avahi mDNS/DNS-SD daemon with verbose debug level
+  avahi-daemon --debug
 
   # Shows the server hostname and port.
   lpstat -H
