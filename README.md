@@ -27,7 +27,7 @@ Virtual PDF AirPrint printer
 
 * Notes
 
-  With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the run command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
+  With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the `run` command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
 
 * Output
 
