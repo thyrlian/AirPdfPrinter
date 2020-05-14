@@ -68,3 +68,11 @@ Virtual PDF AirPrint printer
     * **Queue**: `printers/PDF` (find the info here: http://[*IpAddressOfYourContainer*]:631/printers/)
     * **Name**: [*YourCall*]
     * **Use**: `Generic PostScript Printer`
+
+## License
+
+Copyright (c) 2020 Jing Li.  It is released under the [Apache License](http://www.apache.org/licenses/).  See the [LICENSE](https://raw.githubusercontent.com/thyrlian/AirPdfPrinter/master/LICENSE) file for details.
+
+## Attribution
+
+The [AirPrint-PDF.service](https://github.com/thyrlian/AirPdfPrinter/blob/master/AirPrint-PDF.service) static service XML file for Avahi is created via [airprint-generate](https://github.com/tjfontaine/airprint-generate) script.
