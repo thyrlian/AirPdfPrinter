@@ -1,5 +1,6 @@
 # AirPdfPrinter
-Virtual PDF AirPrint printer
+
+You wanna print or save something as PDF on your iOS device?  Especially keeping those texts as they are, instead of being images.  Well, Apple's iDevices don't come with such a feature by default, but don't worry, we provide you a neat solution here - a virtual PDF AirPrint printer!
 
 ## HOWTO
 
