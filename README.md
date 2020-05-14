@@ -25,6 +25,10 @@ Virtual PDF AirPrint printer
   docker run --network=host -d -p 631:631 -p 5353:5353/udp -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
   ```
 
+* Notes
+
+  With the option `--network=host` set, the container will use the Docker host network stack.  In this way, we don't need to have dbus (a simple interprocess messaging system) package installed in the container.
+
 * Output
 
   CUPS-PDF output directory are defined under **Path Settings** which is located at `/etc/cups/cups-pdf.conf`.  And the default path usually is: `/var/spool/cups-pdf/${USER}`
