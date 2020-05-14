@@ -36,7 +36,7 @@ ADD AirPrint-PDF.service /etc/avahi/services/
 
 # advertise AirPrint via Bonjour broadcast
 RUN DEBIAN_FRONTEND=noninteractive && \
-    apt install -y --no-install-recommends avahi-daemon avahi-utils libnss-mdns && \
+    apt install -y --no-install-recommends avahi-daemon libnss-mdns && \
     echo "image/urf urf (0,UNIRAST)" > /usr/share/cups/mime/apple.types && \
     echo "image/urf urf (0,UNIRAST)" > /usr/share/cups/mime/local.types && \
     echo "image/urf application/vnd.cups-postscript 66 pdftops" > /usr/share/cups/mime/local.convs && \
