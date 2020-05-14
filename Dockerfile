@@ -16,7 +16,7 @@ EXPOSE 631
 EXPOSE 5353/UDP
 
 # install CUPS packages
-RUN apt update -y && apt upgrade -y && \
+RUN apt update -y && \
     apt install -y --no-install-recommends cups printer-driver-cups-pdf
 
 # configure the CUPS scheduler
