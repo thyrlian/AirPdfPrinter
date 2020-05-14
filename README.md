@@ -19,15 +19,15 @@ Virtual PDF AirPrint printer
 
   ```bash
   # Run a container with interactive shell (you'll have to start CUPS print server on your own)
-  docker run --network=host -it -p 631:631 -p 5353:5353/udp -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer /bin/bash
+  docker run --network=host -it -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer /bin/bash
 
   # Run a container in the background
-  docker run --network=host -d -p 631:631 -p 5353:5353/udp -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
+  docker run --network=host -d -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
   ```
 
 * Notes
 
-  With the option `--network=host` set, the container will use the Docker host network stack.  In this way, we don't need to have dbus (a simple interprocess messaging system) package installed in the container.
+  With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the run command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
 
 * Output
 
