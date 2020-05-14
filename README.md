@@ -82,6 +82,14 @@ Virtual PDF AirPrint printer
     * **Name**: [*YourCall*]
     * **Use**: `Generic PostScript Printer`
 
+    <a href="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20macOS.png" target="_blank"><img src="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20macOS.png" width="600"></a>
+
+  * **iOS**
+
+    <a href="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%201.PNG" target="_blank"><img src="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%201.PNG" width="250"></a>
+    <a href="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%202.PNG" target="_blank"><img src="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%202.PNG" width="250"></a>
+    <a href="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%203.PNG" target="_blank"><img src="https://github.com/thyrlian/AirPdfPrinter/blob/master/assets/Add%20Printer%20-%20iOS%20-%203.PNG" width="250"></a>
+
 ## License
 
 Copyright (c) 2020 Jing Li.  It is released under the [Apache License](http://www.apache.org/licenses/).  See the [LICENSE](https://raw.githubusercontent.com/thyrlian/AirPdfPrinter/master/LICENSE) file for details.
