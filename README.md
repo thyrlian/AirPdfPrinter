@@ -67,6 +67,13 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
   # Shows the current default destination.
   lpstat -d
+
+  # Display network connections, you would need to install net-tools package
+  netstat -ltup
+
+  # Find internet printing protocol printers
+  ippfind
+  ippfind --remote
   ```
 
 * Manage
