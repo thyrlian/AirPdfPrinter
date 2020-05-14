@@ -13,7 +13,7 @@ Virtual PDF AirPrint printer
   docker build --build-arg ADMIN_PASSWORD=<YourPassword> -t air-pdf-printer .
   ```
 
-  The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23).
+  The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L25).
 
 * Run
 
