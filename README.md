@@ -1,6 +1,8 @@
+# AirPdfPrinter
+
 ![headline](assets/AirPdfPrinter.png)
 
-# AirPdfPrinter
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-info-blue.svg)](https://hub.docker.com/r/thyrlian/air-pdf-printer)
 
 You wanna print or save something as PDF on your iOS device?  Especially keeping those texts as they are, instead of being images.  Well, Apple's iDevices don't come with such a feature by default, but don't worry, we provide you a neat solution here - a virtual PDF AirPrint printer!
 
@@ -22,6 +24,9 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
 
   # Build with argument, set your own admin password instead of the default one
   docker build --build-arg ADMIN_PASSWORD=<YourPassword> -t air-pdf-printer .
+
+  # Or directly pull the image from Docker Hub
+  docker pull thyrlian/air-pdf-printer
   ```
 
   The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23).
