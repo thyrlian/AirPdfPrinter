@@ -71,6 +71,9 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
   # Run all init scripts, in alphabetical order, with the status command
   service --status-all
 
+  # List units that systemd currently has in memory, with specified type and state
+  systemctl list-units --type=service --state=active
+
   # Start CUPS service
   service cups start
 
