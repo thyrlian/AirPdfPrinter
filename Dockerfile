@@ -6,8 +6,6 @@
 # Base image
 # ---------------------------------------------------------------------- #
 FROM ubuntu:20.04
-# for ARM architecture based machines, please use the one below instead of above
-# FROM arm32v7/ubuntu:20.04
 
 # Author
 # ---------------------------------------------------------------------- #

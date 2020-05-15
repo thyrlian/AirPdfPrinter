@@ -16,7 +16,7 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
   docker build --build-arg ADMIN_PASSWORD=<YourPassword> -t air-pdf-printer .
   ```
 
-  The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L25).
+  The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23).
 
 * Run
 
