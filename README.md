@@ -38,7 +38,9 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
 * **Troubleshoot**
 
-  Logs directory: `/var/log/cups/`
+  * CUPS logs directory: `/var/log/cups/`
+
+  * Start Avahi daemon with verbose debug level: `avahi-daemon --debug`
 
 * **Commands**
 
@@ -51,9 +53,6 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
   # Start Avahi mDNS/DNS-SD daemon
   service avahi-daemon start
-
-  # Start Avahi mDNS/DNS-SD daemon with verbose debug level
-  avahi-daemon --debug
 
   # Shows the server hostname and port.
   lpstat -H
