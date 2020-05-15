@@ -30,7 +30,17 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
 * **Notes**
 
-  With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the `run` command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
+  * **Multi-Arch**: This Docker container would also work on ARM-based computer, you just need to build the Docker image properly.  Here I'm not gonna talk about Docker's experimental feature `buildx` for multiple architectures support, you can find more information [here](https://docs.docker.com/buildx/working-with-buildx/) and [here](https://docs.docker.com/docker-for-mac/multi-arch/) on your own.  In order to build for the appropriate CPU architecture, we can simply use the right base image in the Dockerfile.
+
+    ```bash
+    # Change base image to ARMv7 architecture
+    sed -i.bak "s/FROM ubuntu:/FROM arm32v7\/ubuntu:/" Dockerfile && rm Dockerfile.bak
+
+    # Change base image to x86_64 architecture
+    sed -i.bak "s/FROM arm32v7\/ubuntu:/FROM ubuntu:/" Dockerfile && rm Dockerfile.bak
+    ```
+
+  * **Network**: With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the `run` command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
 
 * **Output**
 
