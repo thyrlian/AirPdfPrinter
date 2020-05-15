@@ -98,6 +98,9 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
   # Display network connections, you need to have net-tools package installed
   netstat -ltup
 
+  # Browse for all mDNS/DNS-SD services using the Avahi daemon and registered on the LAN
+  avahi-browse -a -t
+
   # Find internet printing protocol printers
   ippfind
   ippfind --remote
