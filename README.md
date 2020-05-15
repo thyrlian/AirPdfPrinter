@@ -6,7 +6,7 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
 ## HOWTO
 
-* Build
+* **Build**
 
   ```bash
   # Assume you're in this project's root directory, where the Dockerfile is located
@@ -18,7 +18,7 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
 
   The default admin username is `root`, and the default admin password is [here](https://github.com/thyrlian/AirPdfPrinter/blob/master/Dockerfile#L23).
 
-* Run
+* **Run**
 
   ```bash
   # Run a container with interactive shell (you'll have to start CUPS print server on your own)
@@ -28,19 +28,19 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
   docker run --network=host -d -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
   ```
 
-* Notes
+* **Notes**
 
   With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the `run` command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require `dbus` (a simple interprocess messaging system) package in the container.  For more information, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).
 
-* Output
+* **Output**
 
   CUPS-PDF output directory are defined under **Path Settings** which is located at `/etc/cups/cups-pdf.conf`.  And the default path usually is: `/var/spool/cups-pdf/${USER}`
 
-* Troubleshoot
+* **Troubleshoot**
 
   Logs directory: `/var/log/cups/`
 
-* Commands
+* **Commands**
 
   ```bash
   # Run all init scripts, in alphabetical order, with the status command
@@ -78,11 +78,11 @@ You wanna print or save something as PDF on your iOS device?  Especially keeping
   ippfind --remote
   ```
 
-* Manage
+* **Manage**
 
   Web Interface: http://[*IpAddressOfYourContainer*]:631/
 
-* Add Printer
+* **Add Printer**
 
   * **macOS**: `System Preferences` -> `Printers & Scanners` -> `Add (+)` -> `IP`
 
