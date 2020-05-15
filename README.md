@@ -4,6 +4,14 @@
 
 You wanna print or save something as PDF on your iOS device?  Especially keeping those texts as they are, instead of being images.  Well, Apple's iDevices don't come with such a feature by default, but don't worry, we provide you a neat solution here - a virtual PDF AirPrint printer!
 
+## Philosophy
+
+To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, below requirements must be fulfilled, as described [here](https://wiki.debian.org/CUPSAirPrint).
+
+  * The printer must be advertised with **Bonjour broadcasting**.
+
+  * The printer must communicate with the client using **IPP** (Internet Printing Protocol).
+
 ## HOWTO
 
 * **Build**
