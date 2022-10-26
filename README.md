@@ -39,6 +39,9 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
 
   # Run a container in the background
   docker run --network=host -d -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
+
+  # Run a container with a custom admin password
+  docker run --network=host -e ADMIN_PASSWORD="my_password" -d -v $(pwd)/pdf:/root/PDF -v $(pwd)/cups-pdf:/var/spool/cups-pdf --name air-pdf-printer air-pdf-printer
   ```
 
 * **Notes**
