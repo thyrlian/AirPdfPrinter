@@ -156,7 +156,7 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
 
 ## License
 
-Copyright (c) 2020 Jing Li.  It is released under the [Apache License](http://www.apache.org/licenses/).  See the [LICENSE](https://raw.githubusercontent.com/thyrlian/AirPdfPrinter/master/LICENSE) file for details.
+Copyright (c) 2020-2023 Jing Li.  It is released under the [Apache License](http://www.apache.org/licenses/).  See the [LICENSE](https://raw.githubusercontent.com/thyrlian/AirPdfPrinter/master/LICENSE) file for details.
 
 ## Attribution
 
