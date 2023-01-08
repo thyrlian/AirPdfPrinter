@@ -55,6 +55,26 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
 
   * **Network**: With the option `--network=host` set, the container will use the Docker host network stack.  When using host network mode, it would discard published ports, thus we don't need to publish any port with the `run` command (e.g.: `-p 631:631 -p 5353:5353/udp`).  And in this way, we don't require [dbus](https://www.freedesktop.org/wiki/Software/dbus/) (a simple interprocess messaging system) package in the container.  However, the `dbus` service is still needed on the host machine (to check its status, you can run for example `systemctl status dbus` on Ubuntu), and even it is deactivated, it would be automatically triggered to active when `avahi-daemon` starts running.  For more information about Docker's network, please check [here](https://docs.docker.com/engine/reference/run/#network-settings) and [here](https://docs.docker.com/network/host/).  Please be aware, the host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, as stated [here](https://docs.docker.com/network/network-tutorial-host/#prerequisites).
 
+      * **Port conflict**: in case any required port on the host machine is already in use, Docker will fail to bind the container port to the host port, when this happens, you'll find a line in `/var/log/cups/error_log`: `Unable to open listen socket for address 0.0.0.0:631 - Address already in use`.  To debug and fix it:
+
+        ```bash
+        # Check ports in use on the host machine
+        sudo lsof -i -P -n | grep LISTEN
+        # Check if a specific port is in use on the host machine (e.g. port 631)
+        sudo lsof -i:631
+        
+        # If port 631 is in use, it's highly likely that the CUPS service is running, then check the service status
+        systemctl status cups
+        # Stop the CUPS service
+        systemctl stop cups
+        # Furthermore, you may want to disable the CUPS service
+        systemctl disable cups
+        # It may happen that the CUPS service will be activated again after reboot, because it's required by another service, to check this
+        systemctl --reverse list-dependencies cups.service
+        # To disable the CUPS service, disregard anything else
+        systemctl mask cups
+        ```
+
   * **Port**: Apple is using UDP port 5353 to find capable services on your network via Bonjour automatically.  Even though mDNS discovery uses the predefined port UDP 5353, application-specific traffic for services like AirPlay may use dynamically selected port numbers.
 
     Port | TCP or UDP | Service or protocol name | RFC | Service name | Used by
