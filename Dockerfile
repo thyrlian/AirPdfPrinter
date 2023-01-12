@@ -28,8 +28,8 @@ RUN mv /etc/cups/cupsd.conf /etc/cups/cupsd.conf.bak && \
 ADD cupsd.conf /etc/cups/
 
 # setup PDF printer
-ADD config.sh /tmp/
-RUN chmod +x /tmp/config.sh && /tmp/config.sh
+ADD --chmod=0755 config.sh /tmp/
+RUN /tmp/config.sh
 
 # configure AirPrint
 ADD AirPrint-PDF.service /etc/avahi/services/
