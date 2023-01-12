@@ -18,6 +18,8 @@ To enable [AirPrint](https://support.apple.com/en-us/HT201311) of a printer, bel
 
 * **Build**
 
+  Because `chmod` option is used for `ADD` instruction, which requires **BuildKit**, make sure it's enabled (please check [this](https://docs.docker.com/build/buildkit/#getting-started) to learn how to enable BuildKit).
+
   ```bash
   # Assume you're in this project's root directory, where the Dockerfile is located
   docker build -t air-pdf-printer .
